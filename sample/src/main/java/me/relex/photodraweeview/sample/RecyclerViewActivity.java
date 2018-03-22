@@ -11,8 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import me.relex.photodraweeview.Attacher;
-import me.relex.photodraweeview.PhotoDraweeView;
+
+import com.github.chrisbanes.photoview.PhotoDraweeViewAttacher;
+import com.github.chrisbanes.photoview.PhotoDraweeView;
+
 
 public class RecyclerViewActivity extends AppCompatActivity {
 
@@ -63,7 +65,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         public DraweeViewHolder(View itemView) {
             super(itemView);
             mPhotoDraweeView = (PhotoDraweeView) itemView.findViewById(R.id.photo_drawee_view);
-            mPhotoDraweeView.setOrientation(Attacher.VERTICAL);
+            mPhotoDraweeView.setOrientation(PhotoDraweeViewAttacher.VERTICAL);
         }
 
         public static DraweeViewHolder createViewHolder(ViewGroup viewGroup) {

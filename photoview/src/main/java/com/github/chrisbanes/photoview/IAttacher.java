@@ -1,4 +1,4 @@
-package me.relex.photodraweeview;
+package com.github.chrisbanes.photoview;
 
 import android.view.GestureDetector;
 import android.view.View;
@@ -48,7 +48,7 @@ public interface IAttacher {
 
     void setScale(float scale, float focalX, float focalY, boolean animate);
 
-    void setOrientation(@Attacher.OrientationMode int orientation);
+    void setOrientation(@PhotoDraweeViewAttacher.OrientationMode int orientation);
 
     void setZoomTransitionDuration(long duration);
 
@@ -56,7 +56,7 @@ public interface IAttacher {
 
     void setOnDoubleTapListener(GestureDetector.OnDoubleTapListener listener);
 
-    void setOnScaleChangeListener(OnScaleChangeListener listener);
+    void setOnScaleChangeListener(OnScaleChangedListener listener);
 
     void setOnLongClickListener(View.OnLongClickListener listener);
 

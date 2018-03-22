@@ -1,7 +1,4 @@
-package me.relex.photodraweeview;
-
-/**
- * ****************************************************************************
+/*******************************************************************************
  * Copyright 2011, 2012 Chris Banes.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,13 +12,15 @@ package me.relex.photodraweeview;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * *****************************************************************************
- */
+ *******************************************************************************/
+package com.github.chrisbanes.photoview;
 
-public interface OnScaleDragGestureListener {
+interface OnGestureListener {
+
     void onDrag(float dx, float dy);
 
-    void onFling(float startX, float startY, float velocityX, float velocityY);
+    void onFling(float startX, float startY, float velocityX,
+                 float velocityY);
 
     void onScale(float scaleFactor, float focusX, float focusY);
 

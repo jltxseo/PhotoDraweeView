@@ -1,4 +1,4 @@
-package me.relex.photodraweeview;
+package com.github.chrisbanes.photoview;
 
 import android.content.Context;
 import android.support.v4.view.MotionEventCompat;
@@ -31,7 +31,7 @@ public class ScaleDragDetector implements ScaleGestureDetector.OnScaleGestureLis
     private final float mTouchSlop;
     private final float mMinimumVelocity;
     private final ScaleGestureDetector mScaleDetector;
-    private final OnScaleDragGestureListener mScaleDragGestureListener;
+    private final OnGestureListener mScaleDragGestureListener;
 
     private VelocityTracker mVelocityTracker;
     private boolean mIsDragging;
@@ -40,7 +40,13 @@ public class ScaleDragDetector implements ScaleGestureDetector.OnScaleGestureLis
     private int mActivePointerId = INVALID_POINTER_ID;
     private int mActivePointerIndex = 0;
 
-    public ScaleDragDetector(Context context, OnScaleDragGestureListener scaleDragGestureListener) {
+    /**
+     * @author jltxseo
+     *         Created by junlintianxia on 2018/03/22.
+     * @version V1.0
+     * @Description
+     */
+    public ScaleDragDetector(Context context, OnGestureListener scaleDragGestureListener) {
         mScaleDetector = new ScaleGestureDetector(context, this);
         mScaleDragGestureListener = scaleDragGestureListener;
 
@@ -49,7 +55,8 @@ public class ScaleDragDetector implements ScaleGestureDetector.OnScaleGestureLis
         mTouchSlop = configuration.getScaledTouchSlop();
     }
 
-    @Override public boolean onScale(ScaleGestureDetector detector) {
+    @Override
+    public boolean onScale(ScaleGestureDetector detector) {
         float scaleFactor = detector.getScaleFactor();
 
         if (Float.isNaN(scaleFactor) || Float.isInfinite(scaleFactor)) {
@@ -60,11 +67,13 @@ public class ScaleDragDetector implements ScaleGestureDetector.OnScaleGestureLis
         return true;
     }
 
-    @Override public boolean onScaleBegin(ScaleGestureDetector detector) {
+    @Override
+    public boolean onScaleBegin(ScaleGestureDetector detector) {
         return true;
     }
 
-    @Override public void onScaleEnd(ScaleGestureDetector detector) {
+    @Override
+    public void onScaleEnd(ScaleGestureDetector detector) {
         mScaleDragGestureListener.onScaleEnd();
     }
 

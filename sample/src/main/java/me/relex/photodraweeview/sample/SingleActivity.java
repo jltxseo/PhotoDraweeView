@@ -6,10 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
-import me.relex.photodraweeview.OnPhotoTapListener;
-import me.relex.photodraweeview.OnViewTapListener;
-import me.relex.photodraweeview.PhotoDraweeView;
+
+import com.github.chrisbanes.photoview.OnPhotoTapListener;
+import com.github.chrisbanes.photoview.OnViewTapListener;
+import com.github.chrisbanes.photoview.PhotoDraweeView;
+
 import me.relex.photodraweeview.sample.gestures.ScaleStepDoubleTapListener;
 
 public class SingleActivity extends AppCompatActivity {
@@ -24,7 +27,8 @@ public class SingleActivity extends AppCompatActivity {
         mPhotoDraweeView = (PhotoDraweeView) findViewById(R.id.photo_drawee_view);
         mPhotoDraweeView.setPhotoUri(Uri.parse("res:///" + R.drawable.panda));
         mPhotoDraweeView.setOnPhotoTapListener(new OnPhotoTapListener() {
-            @Override public void onPhotoTap(View view, float x, float y) {
+            @Override
+            public void onPhotoTap(ImageView view, float x, float y) {
                 Toast.makeText(view.getContext(), "onPhotoTap :  x =  " + x + ";" + " y = " + y,
                         Toast.LENGTH_SHORT).show();
             }

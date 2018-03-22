@@ -1,20 +1,27 @@
-package me.relex.photodraweeview;
+package com.github.chrisbanes.photoview;
 
 import android.graphics.RectF;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.view.DraweeView;
-
+/**
+ * @author jltxseo
+ *         Created by junlintianxia on 2018/03/22.
+ * @version V1.0
+ * @Description
+ */
 public class DefaultOnDoubleTapListener implements GestureDetector.OnDoubleTapListener {
 
-    protected Attacher mAttacher;
+    protected PhotoDraweeViewAttacher mAttacher;
 
-    public DefaultOnDoubleTapListener(Attacher attacher) {
+    public DefaultOnDoubleTapListener(PhotoDraweeViewAttacher attacher) {
         setPhotoDraweeViewAttacher(attacher);
     }
 
-    @Override public boolean onSingleTapConfirmed(MotionEvent e) {
+    @Override
+    public boolean onSingleTapConfirmed(MotionEvent e) {
 
         if (mAttacher == null) {
             return false;
@@ -46,7 +53,8 @@ public class DefaultOnDoubleTapListener implements GestureDetector.OnDoubleTapLi
         return false;
     }
 
-    @Override public boolean onDoubleTap(MotionEvent event) {
+    @Override
+    public boolean onDoubleTap(MotionEvent event) {
         if (mAttacher == null) {
             return false;
         }
@@ -70,11 +78,12 @@ public class DefaultOnDoubleTapListener implements GestureDetector.OnDoubleTapLi
         return true;
     }
 
-    @Override public boolean onDoubleTapEvent(MotionEvent event) {
+    @Override
+    public boolean onDoubleTapEvent(MotionEvent event) {
         return false;
     }
 
-    public void setPhotoDraweeViewAttacher(Attacher attacher) {
+    public void setPhotoDraweeViewAttacher(PhotoDraweeViewAttacher attacher) {
         mAttacher = attacher;
     }
 }

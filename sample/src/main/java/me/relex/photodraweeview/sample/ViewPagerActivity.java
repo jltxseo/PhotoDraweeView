@@ -10,12 +10,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.backends.pipeline.PipelineDraweeControllerBuilder;
 import com.facebook.drawee.controller.BaseControllerListener;
 import com.facebook.imagepipeline.image.ImageInfo;
+import com.github.chrisbanes.photoview.PhotoDraweeView;
+
 import me.relex.circleindicator.CircleIndicator;
-import me.relex.photodraweeview.PhotoDraweeView;
 
 public class ViewPagerActivity extends AppCompatActivity {
 

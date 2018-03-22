@@ -11,9 +11,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.transition.AutoTransition;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
+
+import com.github.chrisbanes.photoview.OnPhotoTapListener;
+import com.github.chrisbanes.photoview.PhotoDraweeView;
+
 import java.util.List;
-import me.relex.photodraweeview.OnPhotoTapListener;
-import me.relex.photodraweeview.PhotoDraweeView;
 
 public class SharedElementLaunchedActivity extends AppCompatActivity {
 
@@ -26,7 +29,8 @@ public class SharedElementLaunchedActivity extends AppCompatActivity {
 
         draweeView.setPhotoUri(Uri.parse("res:///" + R.drawable.panda));
         draweeView.setOnPhotoTapListener(new OnPhotoTapListener() {
-            @Override public void onPhotoTap(View view, float x, float y) {
+            @Override
+            public void onPhotoTap(ImageView view, float x, float y) {
                 onBackPressed();
             }
         });
